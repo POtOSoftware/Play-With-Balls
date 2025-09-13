@@ -16,3 +16,7 @@ func _ready() -> void:
 		
 		ball_color = Color(random_r, random_b, random_g, 1)
 		ball_sprite.modulate = ball_color
+
+func _integrate_forces(state):
+	# you have to be kidding me...
+	rotation_degrees = 0
