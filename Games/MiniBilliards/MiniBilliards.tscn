@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/ColoredBall/ColoredBall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Games/MiniBilliards/MiniBilliards.gd" type="Script" id=2]
+
+[sub_resource type="PhysicsMaterial" id=4]
+rough = true
+absorbent = true
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 105 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8, 104 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 176, 11.25 )
+
+[node name="MiniBilliards" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="CueBall" parent="." instance=ExtResource( 1 )]
+position = Vector2( 264, 96 )
+
+[node name="ColoredBall2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 136, 96 )
+randomize_color = true
+
+[node name="ColoredBall3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 120, 88 )
+randomize_color = true
+
+[node name="ColoredBall4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 120, 104 )
+randomize_color = true
+
+[node name="ColoredBall5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 104, 112 )
+randomize_color = true
+
+[node name="ColoredBall6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 104, 96 )
+randomize_color = true
+
+[node name="ColoredBall7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 104, 80 )
+randomize_color = true
+
+[node name="Walls" type="StaticBody2D" parent="."]
+physics_material_override = SubResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2( -8, 103 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 328, 104 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 160, 193.5 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 160, -11.25 )
+shape = SubResource( 3 )
