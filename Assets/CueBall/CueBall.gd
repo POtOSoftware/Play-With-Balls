@@ -17,6 +17,7 @@ func _process(delta):
 		print("Fire direction: %f" % fire_direction)
 		apply_central_impulse(Vector2(cos(fire_direction) * 100, sin(fire_direction) * 100))
 		print("Fire impulse X: %f | Y: %f" % [cos(fire_direction) * 100, sin(fire_direction) * 100])
+		stop_firing()
 
 func _integrate_forces(state):
 	# you have to be kidding me...
@@ -28,4 +29,10 @@ func setup_firing() -> void:
 
 func stop_firing() -> void:
 	set_process(false)
+	firing_direction.visible = false
 	firing_direction.rotation_degrees = 0
+
+func _on_CueBall_sleeping_state_changed():
+	print("Cue Ball | Sleeping %s" % self.sleeping)
+	if self.sleeping:
+		setup_firing()
