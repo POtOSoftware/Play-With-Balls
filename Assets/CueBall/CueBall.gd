@@ -2,6 +2,7 @@ extends RigidBody2D
 
 onready var firing_direction: Node = $Arrow
 
+var ball_type: int = GameManager.ball_types.CUE_BALL
 var firing: bool = true
 
 func _ready() -> void:

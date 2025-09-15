@@ -5,6 +5,8 @@ onready var ball_sprite: Node = $Sprite
 export var ball_color: Color = Color(1, 1, 1, 1)
 export var randomize_color: bool = false
 
+var ball_type: int = GameManager.ball_types.OBJECT_BALL
+
 var rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
@@ -20,3 +22,6 @@ func _ready() -> void:
 func _integrate_forces(state):
 	# you have to be kidding me...
 	rotation_degrees = 0
+
+func _on_ColoredBall_sleeping_state_changed():
+	print("Ball %s | Sleeping: %s" % [self.name, self.sleeping]) 
