@@ -9,7 +9,7 @@ bounce = 5.0
 [sub_resource type="CircleShape2D" id=1]
 radius = 8.0
 
-[node name="ColoredBall" type="RigidBody2D"]
+[node name="ColoredBall" type="RigidBody2D" groups=["Object_Balls"]]
 mass = 0.102041
 physics_material_override = SubResource( 2 )
 gravity_scale = 0.0
@@ -20,5 +20,6 @@ texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+disabled = true
 
 [connection signal="sleeping_state_changed" from="." to="." method="_on_ColoredBall_sleeping_state_changed"]

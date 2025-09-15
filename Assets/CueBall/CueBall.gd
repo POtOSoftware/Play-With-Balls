@@ -11,7 +11,7 @@ func _ready() -> void:
 		setup_firing()
 
 func _process(delta):
-	firing_direction.rotation_degrees += 2
+	firing_direction.rotation_degrees += 1
 	if Input.is_action_just_pressed("action_button"):
 		var fire_direction: float = deg2rad(firing_direction.rotation_degrees)
 		print("Fire direction: %f" % fire_direction)

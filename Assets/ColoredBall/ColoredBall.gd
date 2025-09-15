@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 onready var ball_sprite: Node = $Sprite
+onready var collision: Node = $CollisionShape2D
 
 export var ball_color: Color = Color(1, 1, 1, 1)
 export var randomize_color: bool = false
@@ -18,6 +19,12 @@ func _ready() -> void:
 		
 		ball_color = Color(random_r, random_b, random_g, 1)
 		ball_sprite.modulate = ball_color
+	
+	# pretty hacky, but it's to give the balls a "grace period" before the
+	# holes move to their final positions instead of getting eaten by the hole
+	# before the hole moves out of the exclusion zone
+	yield(get_tree().create_timer(0.1), "timeout")
+	collision.disabled = false
 
 func _integrate_forces(state):
 	# you have to be kidding me...

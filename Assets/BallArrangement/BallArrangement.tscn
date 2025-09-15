@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/ColoredBall/ColoredBall.gd" type="Script" id=1]
+[ext_resource path="res://Assets/ColoredBall/ColoredBall.tscn" type="PackedScene" id=2]
+
+[sub_resource type="PhysicsMaterial" id=2]
+bounce = 5.0
+
+[node name="BallArrangement" type="Node2D"]
+position = Vector2( 120, 96 )
+
+[node name="ColoredBall2" type="RigidBody2D" parent="." groups=["Object_Balls"] instance=ExtResource( 2 )]
+position = Vector2( 16, 1 )
+mass = 0.102041
+physics_material_override = SubResource( 2 )
+gravity_scale = 0.0
+script = ExtResource( 1 )
+randomize_color = true
+
+[node name="ColoredBall3" type="RigidBody2D" parent="." groups=["Object_Balls"] instance=ExtResource( 2 )]
+position = Vector2( 0, -7 )
+mass = 0.102041
+physics_material_override = SubResource( 2 )
+gravity_scale = 0.0
+script = ExtResource( 1 )
+randomize_color = true
+
+[node name="ColoredBall4" type="RigidBody2D" parent="." groups=["Object_Balls"] instance=ExtResource( 2 )]
+position = Vector2( 0, 8 )
+mass = 0.102041
+physics_material_override = SubResource( 2 )
+gravity_scale = 0.0
+script = ExtResource( 1 )
+randomize_color = true
+
+[node name="ColoredBall5" type="RigidBody2D" parent="." groups=["Object_Balls"] instance=ExtResource( 2 )]
+position = Vector2( -16, 16 )
+mass = 0.102041
+physics_material_override = SubResource( 2 )
+gravity_scale = 0.0
+script = ExtResource( 1 )
+randomize_color = true
+
+[node name="ColoredBall6" type="RigidBody2D" parent="." groups=["Object_Balls"] instance=ExtResource( 2 )]
+position = Vector2( -16, 0 )
+mass = 0.102041
+physics_material_override = SubResource( 2 )
+gravity_scale = 0.0
+script = ExtResource( 1 )
+randomize_color = true
+
+[node name="ColoredBall7" type="RigidBody2D" parent="." groups=["Object_Balls"] instance=ExtResource( 2 )]
+position = Vector2( -16, -16 )
+mass = 0.102041
+physics_material_override = SubResource( 2 )
+gravity_scale = 0.0
+script = ExtResource( 1 )
+randomize_color = true
+
+[connection signal="sleeping_state_changed" from="ColoredBall2" to="ColoredBall2" method="_on_ColoredBall_sleeping_state_changed"]
+[connection signal="sleeping_state_changed" from="ColoredBall3" to="ColoredBall3" method="_on_ColoredBall_sleeping_state_changed"]
+[connection signal="sleeping_state_changed" from="ColoredBall4" to="ColoredBall4" method="_on_ColoredBall_sleeping_state_changed"]
+[connection signal="sleeping_state_changed" from="ColoredBall5" to="ColoredBall5" method="_on_ColoredBall_sleeping_state_changed"]
+[connection signal="sleeping_state_changed" from="ColoredBall6" to="ColoredBall6" method="_on_ColoredBall_sleeping_state_changed"]
+[connection signal="sleeping_state_changed" from="ColoredBall7" to="ColoredBall7" method="_on_ColoredBall_sleeping_state_changed"]
