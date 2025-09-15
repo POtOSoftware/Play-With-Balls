@@ -4,9 +4,10 @@ func _on_Hole_body_entered(body):
 	if body.ball_type != null:
 		if body.ball_type == GameManager.ball_types.CUE_BALL:
 			print("YOU SUCK!")
-			body.queue_free()
+			#emit_signal(GameManager.game_over)
+			get_tree().reload_current_scene()
 		elif body.ball_type == GameManager.ball_types.OBJECT_BALL:
-			print("bwaaaaah :3")
+			#print("bwaaaaah :3")
 			GameManager.score += 1
 			body.queue_free()
 		else:

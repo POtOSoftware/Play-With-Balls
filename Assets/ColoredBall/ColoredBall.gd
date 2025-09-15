@@ -7,7 +7,7 @@ export var randomize_color: bool = false
 
 var ball_type: int = GameManager.ball_types.OBJECT_BALL
 
-var rng = RandomNumberGenerator.new()
+var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 func _ready() -> void:
 	if randomize_color:
