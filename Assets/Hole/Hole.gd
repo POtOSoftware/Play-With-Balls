@@ -7,6 +7,7 @@ func _on_Hole_body_entered(body):
 			body.queue_free()
 		elif body.ball_type == GameManager.ball_types.OBJECT_BALL:
 			print("bwaaaaah :3")
+			GameManager.score += 1
 			body.queue_free()
 		else:
 			printerr("%s is not a valid ball type!" % body.name)
