@@ -18,6 +18,6 @@ func _on_Hole_body_entered(body):
 	else:
 		print("%s is not a ball at all" % body.name)
 
-func spawn() -> void:
-	position.x = GameManager.rng.randi_range(MIN_COORDINATE.x, MAX_COORDINATE.x)
-	position.y = GameManager.rng.randi_range(MIN_COORDINATE.y, MAX_COORDINATE.y)
+func spawn(spawn_position: Vector2) -> void:
+	position.x = spawn_position.x
+	position.y = spawn_position.y

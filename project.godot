@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="Play With Balls!"
+config/name="Mini Billiards"
 run/main_scene="res://Games/MiniBilliards/MiniBilliards.tscn"
 config/icon="res://icon.png"
 
